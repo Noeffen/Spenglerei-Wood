@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spenglerei Wood | Dach, Fassade & Metall</title>
+  <meta
+    name="description"
+    content="Spenglerei Wood – Ihr Fachbetrieb für Dach, Fassade, Dachrinnen und Metallarbeiten."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --max-width: 1200px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 30%),
+        linear-gradient(180deg, #0b1220 0%, #111827 45%, #0f172a 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 1.4rem;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #111827;
+      box-shadow: 0 12px 24px rgba(245, 158, 11, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* NAV */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 18, 32, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      background: rgba(245, 158, 11, 0.08);
+      color: #fde68a;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.4rem;
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-points span::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      border-radius: 18px;
+      min-height: 460px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80") center/cover;
+      display: flex;
+      align-items: end;
+      padding: 1.2rem;
+    }
+
+    .hero-badge {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      max-width: 260px;
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-badge span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0 0 0.75rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* CARDS */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(245, 158, 11, 0.25);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(245, 158, 11, 0.14);
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 420px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.45)),
+        url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80") center/cover;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 0;
+    }
+
+    .check-list li {
+      margin-bottom: 0.8rem;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 800;
+      margin-right: 0.7rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding-bottom: 5rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 28px;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem 0;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .grid-3,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-image {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p,
+      .section-head p,
+      .card p,
+      .about-box p,
+      .cta-box p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Spenglerei <span>Wood</span></a>
+      <nav class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Ihr Fachbetrieb für Spenglerarbeiten</div>
+          <h1>Präzise Metallarbeiten für Dach, Fassade und Entwässerung.</h1>
+          <p>
+            Spenglerei Wood steht für saubere Ausführung, langlebige Materialien
+            und zuverlässige Arbeit rund ums Haus. Von Dachrinnen über
+            Verblechungen bis zu individuellen Lösungen aus Metall.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Jetzt anfragen</a>
+            <a href="#leistungen" class="btn btn-secondary">Leistungen ansehen</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Saubere Handwerksarbeit</span>
+            <span>Zuverlässig & termintreu</span>
+            <span>Individuelle Lösungen</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="hero-badge">
+              <strong>Handwerk mit Qualität</strong>
+              <span>Dachrinnen, Blechdächer, Fassaden und Reparaturen aus einer Hand.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <h2>Unsere Leistungen</h2>
+          <p>
+            Wir übernehmen klassische Spenglerarbeiten für Privatkunden,
+            Gewerbe und Sanierungsprojekte.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">⌂</div>
+            <h3>Dachrinnen & Fallrohre</h3>
+            <p>
+              Montage, Austausch und Reparatur von Dachentwässerungssystemen
+              für eine sichere Ableitung von Regenwasser.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">▣</div>
+            <h3>Dach- & Kaminverblechungen</h3>
+            <p>
+              Saubere Blechanschlüsse, Verkleidungen und Schutzlösungen für
+              Dächer, Kamine, Gauben und Anschlüsse.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">▤</div>
+            <h3>Fassaden aus Metall</h3>
+            <p>
+              Moderne und langlebige Fassadenlösungen mit hochwertiger Optik
+              und robustem Wetterschutz.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚒</div>
+            <h3>Reparaturen & Wartung</h3>
+            <p>
+              Schnelle Instandsetzung von Schäden sowie regelmäßige Wartung,
+              damit alles langfristig dicht und funktional bleibt.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◇</div>
+            <h3>Sonderanfertigungen</h3>
+            <p>
+              Individuelle Metallarbeiten nach Maß – passgenau für Ihr Gebäude
+              und Ihre Anforderungen.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✓</div>
+            <h3>Beratung & Planung</h3>
+            <p>
+              Von der ersten Idee bis zur fertigen Ausführung begleiten wir Ihr
+              Projekt persönlich und zuverlässig.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns">
+      <div class="container about-grid">
+        <div class="about-image"></div>
+
+        <div class="about-box">
+          <div class="section-head">
+            <h2>Über Spenglerei Wood</h2>
+            <p>
+              Wir verbinden traditionelles Handwerk mit moderner Ausführung.
+              Unser Anspruch ist es, funktionale und optisch starke Lösungen
+              zu schaffen, die viele Jahre halten.
+            </p>
+          </div>
+
+          <ul class="check-list">
+            <li>Persönliche Betreuung vom ersten Kontakt bis zur Fertigstellung</li>
+            <li>Hochwertige Materialien und präzise Verarbeitung</li>
+            <li>Zuverlässige Umsetzung bei Neubau, Umbau und Sanierung</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="kontakt">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Sie planen ein Projekt?</h2>
+            <p>
+              Ob neue Dachrinne, Verblechung oder Fassadenlösung – wir beraten
+              Sie gerne und erstellen ein passendes Angebot.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+43123456789">Jetzt anrufen</a>
+            <a class="btn btn-secondary" href="mailto:info@spenglerei-wood.at">E-Mail senden</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Spenglerei Wood</div>
+      <div>Telefon: +43 123 456789 · E-Mail: info@spenglerei-wood.at</div>
+    </div>
+  </footer>
+</body>
+</html>
