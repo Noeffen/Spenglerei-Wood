@@ -10,16 +10,16 @@
   />
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: rgba(255, 255, 255, 0.08);
-      --line: rgba(255, 255, 255, 0.12);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
+      --bg: #f9fafb;
+      --bg-soft: #f3f4f6;
+      --card: rgba(255, 255, 255, 0.95);
+      --line: rgba(100, 116, 139, 0.15);
+      --text: #1e293b;
+      --muted: #64748b;
       --accent: #f59e0b;
       --accent-dark: #d97706;
       --max-width: 1200px;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
       --radius: 22px;
     }
 
@@ -36,8 +36,8 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 30%),
-        linear-gradient(180deg, #0b1220 0%, #111827 45%, #0f172a 100%);
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.08), transparent 40%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #f3f4f6 100%);
       line-height: 1.6;
     }
 
@@ -67,7 +67,7 @@
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: #111827;
+      color: #fff;
       box-shadow: 0 12px 24px rgba(245, 158, 11, 0.28);
     }
 
@@ -83,7 +83,7 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(100, 116, 139, 0.06);
     }
 
     /* NAV */
@@ -92,8 +92,8 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(14px);
-      background: rgba(11, 18, 32, 0.72);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(100, 116, 139, 0.12);
     }
 
     .nav-inner {
@@ -146,9 +146,9 @@
     .eyebrow {
       display: inline-block;
       padding: 0.45rem 0.8rem;
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      background: rgba(245, 158, 11, 0.08);
-      color: #fde68a;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.12);
+      color: #b45309;
       border-radius: 999px;
       font-size: 0.9rem;
       font-weight: bold;
@@ -179,7 +179,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem 1.4rem;
-      color: #e5e7eb;
+      color: #475569;
       font-weight: 600;
     }
 
@@ -190,7 +190,7 @@
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 1.5rem;
@@ -201,7 +201,7 @@
       border-radius: 18px;
       min-height: 460px;
       background:
-        linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)),
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(248, 250, 252, 0.65)),
         url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80") center/cover;
       display: flex;
       align-items: end;
@@ -209,11 +209,12 @@
     }
 
     .hero-badge {
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(100, 116, 139, 0.15);
       padding: 1rem 1.1rem;
       border-radius: 16px;
       max-width: 260px;
+      color: var(--text);
     }
 
     .hero-badge strong {
@@ -261,11 +262,13 @@
       padding: 1.5rem;
       box-shadow: var(--shadow);
       transition: 0.25s ease;
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: rgba(245, 158, 11, 0.25);
+      border-color: rgba(245, 158, 11, 0.35);
+      box-shadow: 0 24px 48px rgba(245, 158, 11, 0.12);
     }
 
     .card-icon {
@@ -302,7 +305,7 @@
       min-height: 420px;
       border-radius: var(--radius);
       background:
-        linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.45)),
+        linear-gradient(rgba(255, 255, 255, 0.3), rgba(248, 250, 252, 0.55)),
         url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80") center/cover;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
@@ -340,7 +343,7 @@
     }
 
     .cta-box {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(255, 255, 255, 0.06));
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(255, 255, 255, 0.6));
       border: 1px solid rgba(245, 158, 11, 0.25);
       border-radius: 28px;
       padding: 2rem;
@@ -364,10 +367,10 @@
 
     /* FOOTER */
     footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(100, 116, 139, 0.12);
       padding: 2rem 0;
       color: var(--muted);
-      background: rgba(0, 0, 0, 0.18);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .footer-inner {
@@ -481,7 +484,7 @@
         </div>
 
         <div class="grid-3">
-          <article class="card">
+          <article class="card" onclick="openMail('dachrinnen')">
             <div class="card-icon">⌂</div>
             <h3>Dachrinnen & Fallrohre</h3>
             <p>
@@ -490,7 +493,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" onclick="openMail('verblechung')">
             <div class="card-icon">▣</div>
             <h3>Dach- & Kaminverblechungen</h3>
             <p>
@@ -499,16 +502,16 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" onclick="openMail('metallfassaden')">
             <div class="card-icon">▤</div>
-            <h3>Fassaden aus Metall</h3>
+            <h3>Metallfassaden</h3>
             <p>
-              Moderne und langlebige Fassadenlösungen mit hochwertiger Optik
+              Moderne und langlebige Metallfassadenlösungen mit hochwertiger Optik
               und robustem Wetterschutz.
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" onclick="openMail('reparatur')">
             <div class="card-icon">⚒</div>
             <h3>Reparaturen & Wartung</h3>
             <p>
@@ -517,7 +520,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" onclick="openMail('sonderanfertigung')">
             <div class="card-icon">◇</div>
             <h3>Sonderanfertigungen</h3>
             <p>
@@ -526,7 +529,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" onclick="openMail('beratung')">
             <div class="card-icon">✓</div>
             <h3>Beratung & Planung</h3>
             <p>
@@ -573,8 +576,8 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+43123456789">Jetzt anrufen</a>
-            <a class="btn btn-secondary" href="mailto:info@spenglerei-wood.at">E-Mail senden</a>
+            <a class="btn btn-primary" href="tel:+49123456789">Jetzt anrufen</a>
+            <a class="btn btn-secondary" href="mailto:info@spenglerei-wood.de">E-Mail senden</a>
           </div>
         </div>
       </div>
@@ -587,5 +590,42 @@
       <div>Telefon: +49 123 456789 · E-Mail: info@spenglerei-wood.de</div>
     </div>
   </footer>
+
+  <script>
+    function openMail(service) {
+      const templates = {
+        dachrinnen: {
+          subject: "Anfrage: Dachrinnen & Fallrohre",
+          body: "Guten Tag,\n\nich interessiere mich für Ihre Dienstleistung im Bereich Dachrinnen & Fallrohre.\n\nKönnten Sie mir bitte ein Angebot für folgendes Projekt erstellen:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        },
+        verblechung: {
+          subject: "Anfrage: Dach- & Kaminverblechungen",
+          body: "Guten Tag,\n\nich interessiere mich für Ihre Dienstleistung im Bereich Dach- & Kaminverblechungen.\n\nKönnten Sie mir bitte ein Angebot für folgendes Projekt erstellen:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        },
+        metallfassaden: {
+          subject: "Anfrage: Metallfassaden",
+          body: "Guten Tag,\n\nich interessiere mich für Ihre Dienstleistung im Bereich Metallfassaden.\n\nKönnten Sie mir bitte ein Angebot für folgendes Projekt erstellen:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        },
+        reparatur: {
+          subject: "Anfrage: Reparaturen & Wartung",
+          body: "Guten Tag,\n\nich benötige Ihre Hilfe im Bereich Reparaturen & Wartung.\n\nKönnten Sie mir bitte ein Angebot für folgendes Projekt erstellen:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        },
+        sonderanfertigung: {
+          subject: "Anfrage: Sonderanfertigungen",
+          body: "Guten Tag,\n\nich benötige eine individuelle Sonderanfertigung für ein Metallprojekt.\n\nKönnten Sie mir bitte ein Angebot für folgendes Projekt erstellen:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        },
+        beratung: {
+          subject: "Anfrage: Beratung & Planung",
+          body: "Guten Tag,\n\nich würde gerne eine ausführliche Beratung zu meinem Projekt in Anspruch nehmen.\n\nEs geht dabei um:\n\n[Bitte beschreiben Sie Ihr Projekt hier]\n\nIch freue mich auf Ihre Rückmeldung.\n\nViele Grüße"
+        }
+      };
+
+      const template = templates[service];
+      const email = "info@spenglerei-wood.de";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`;
+      
+      window.location.href = mailtoLink;
+    }
+  </script>
 </body>
 </html>
