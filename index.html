@@ -629,4 +629,10 @@
         }
       };
 
-      const template = tem
+      const template = templates[service];
+      const email = "info@spenglerei-wood.de";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`;
+      
+      window.location.href = mailtoLink;
+    }
+  </script>
