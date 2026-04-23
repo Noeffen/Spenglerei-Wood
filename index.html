@@ -259,59 +259,54 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1.5rem;
       box-shadow: var(--shadow);
       transition: 0.25s ease;
       cursor: pointer;
-      background-size: cover;
-      background-position: center;
-      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Individuelle Card-Hintergründe */
-    .card:nth-child(1) {
+    /* Card Image oben */
+    .card::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 60%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card:nth-child(1)::before {
       background-image: url('foto1.jpg');
     }
 
-    .card:nth-child(2) {
+    .card:nth-child(2)::before {
       background-image: url('foto2.jpg');
     }
 
-    .card:nth-child(3) {
+    .card:nth-child(3)::before {
       background-image: url('foto3.jpg');
     }
 
-    .card:nth-child(4) {
+    .card:nth-child(4)::before {
       background-image: url('foto4.jpg');
     }
 
-    .card:nth-child(5) {
+    .card:nth-child(5)::before {
       background-image: url('foto5.jpg');
     }
 
-    .card:nth-child(6) {
+    .card:nth-child(6)::before {
       background-image: url('foto6.jpg');
     }
 
-    /* Dunkler Overlay damit Text lesbar bleibt */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.65);
-      border-radius: var(--radius);
-      z-index: 1;
-    }
-
-    /* Content über dem Overlay */
-    .card-icon,
-    .card h3,
-    .card p {
-      position: relative;
-      z-index: 2;
+    /* Card Content Container */
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -535,57 +530,69 @@
 
         <div class="grid-3">
           <article class="card" onclick="openMail('dachrinnen')">
-            <div class="card-icon">⌂</div>
-            <h3>Dachrinnen & Fallrohre</h3>
-            <p>
-              Montage, Austausch und Reparatur von Dachentwässerungssystemen
-              für eine sichere Ableitung von Regenwasser.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">⌂</div>
+              <h3>Dachrinnen & Fallrohre</h3>
+              <p>
+                Montage, Austausch und Reparatur von Dachentwässerungssystemen
+                für eine sichere Ableitung von Regenwasser.
+              </p>
+            </div>
           </article>
 
           <article class="card" onclick="openMail('verblechung')">
-            <div class="card-icon">▣</div>
-            <h3>Dach- & Kaminverblechungen</h3>
-            <p>
-              Saubere Blechanschlüsse, Verkleidungen und Schutzlösungen für
-              Dächer, Kamine, Gauben und Anschlüsse.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">▣</div>
+              <h3>Dach- & Kaminverblechungen</h3>
+              <p>
+                Saubere Blechanschlüsse, Verkleidungen und Schutzlösungen für
+                Dächer, Kamine, Gauben und Anschlüsse.
+              </p>
+            </div>
           </article>
 
           <article class="card" onclick="openMail('metallfassaden')">
-            <div class="card-icon">▤</div>
-            <h3>Metallfassaden</h3>
-            <p>
-              Moderne und langlebige Metallfassadenlösungen mit hochwertiger Optik
-              und robustem Wetterschutz.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">▤</div>
+              <h3>Metallfassaden</h3>
+              <p>
+                Moderne und langlebige Metallfassadenlösungen mit hochwertiger Optik
+                und robustem Wetterschutz.
+              </p>
+            </div>
           </article>
 
           <article class="card" onclick="openMail('reparatur')">
-            <div class="card-icon">⚒</div>
-            <h3>Reparaturen & Wartung</h3>
-            <p>
-              Schnelle Instandsetzung von Schäden sowie regelmäßige Wartung,
-              damit alles langfristig dicht und funktional bleibt.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">⚒</div>
+              <h3>Reparaturen & Wartung</h3>
+              <p>
+                Schnelle Instandsetzung von Schäden sowie regelmäßige Wartung,
+                damit alles langfristig dicht und funktional bleibt.
+              </p>
+            </div>
           </article>
 
           <article class="card" onclick="openMail('sonderanfertigung')">
-            <div class="card-icon">◇</div>
-            <h3>Sonderanfertigungen</h3>
-            <p>
-              Individuelle Metallarbeiten nach Maß – passgenau für Ihr Gebäude
-              und Ihre Anforderungen.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">◇</div>
+              <h3>Sonderanfertigungen</h3>
+              <p>
+                Individuelle Metallarbeiten nach Maß – passgenau für Ihr Gebäude
+                und Ihre Anforderungen.
+              </p>
+            </div>
           </article>
 
           <article class="card" onclick="openMail('beratung')">
-            <div class="card-icon">✓</div>
-            <h3>Beratung & Planung</h3>
-            <p>
-              Von der ersten Idee bis zur fertigen Ausführung begleiten wir Ihr
-              Projekt persönlich und zuverlässig.
-            </p>
+            <div class="card-content">
+              <div class="card-icon">✓</div>
+              <h3>Beratung & Planung</h3>
+              <p>
+                Von der ersten Idee bis zur fertigen Ausführung begleiten wir Ihr
+                Projekt persönlich und zuverlässig.
+              </p>
+            </div>
           </article>
         </div>
       </div>
