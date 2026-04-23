@@ -263,6 +263,55 @@
       box-shadow: var(--shadow);
       transition: 0.25s ease;
       cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Individuelle Card-Hintergründe */
+    .card:nth-child(1) {
+      background-image: url('foto1.png');
+    }
+
+    .card:nth-child(2) {
+      background-image: url('foto2.png');
+    }
+
+    .card:nth-child(3) {
+      background-image: url('foto3.png');
+    }
+
+    .card:nth-child(4) {
+      background-image: url('foto4.png');
+    }
+
+    .card:nth-child(5) {
+      background-image: url('foto5.png');
+    }
+
+    .card:nth-child(6) {
+      background-image: url('foto6.png');
+    }
+
+    /* Dunkler Overlay damit Text lesbar bleibt */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius);
+      z-index: 1;
+    }
+
+    /* Content über dem Overlay */
+    .card-icon,
+    .card h3,
+    .card p {
+      position: relative;
+      z-index: 2;
     }
 
     .card:hover {
@@ -467,7 +516,7 @@
           <div class="hero-image">
             <div class="hero-badge">
               <strong>Handwerk mit Qualität</strong>
-              <span>Dachrinnen, Blechdächer, Metallfassaden und Reparaturen aus einer Hand.</span>
+              <span>Dachrinnen, Blechdächer, Fassaden und Reparaturen aus einer Hand.</span>
             </div>
           </div>
         </div>
