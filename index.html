@@ -251,7 +251,7 @@
     /* CARDS */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.4rem;
     }
 
@@ -281,24 +281,83 @@
       background-image: url('foto1.jpg');
     }
 
+    /* Dach- & Kaminverblechungen - 2 Bilder Split */
+    .card:nth-child(2) {
+      position: relative;
+    }
+
     .card:nth-child(2)::before {
       background-image: url('foto2.jpg');
+      width: 50%;
+      padding-top: 120%;
+      border-right: 2px solid white;
+    }
+
+    .card:nth-child(2)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      padding-top: 60%;
+      background-image: url('foto3.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Metallfassaden - 2 Bilder Split */
+    .card:nth-child(3) {
+      position: relative;
     }
 
     .card:nth-child(3)::before {
-      background-image: url('foto3.jpg');
+      background-image: url('foto4.jpg');
+      width: 50%;
+      padding-top: 120%;
+      border-right: 2px solid white;
+    }
+
+    .card:nth-child(3)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      padding-top: 60%;
+      background-image: url('foto5.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .card:nth-child(4)::before {
-      background-image: url('foto4.jpg');
+      background-image: url('foto6.jpg');
+    }
+
+    /* Sonderanfertigungen - 2 Bilder Split */
+    .card:nth-child(5) {
+      position: relative;
     }
 
     .card:nth-child(5)::before {
-      background-image: url('foto5.jpg');
+      background-image: url('foto7.jpg');
+      width: 50%;
+      padding-top: 120%;
+      border-right: 2px solid white;
     }
 
-    .card:nth-child(6)::before {
-      background-image: url('foto6.jpg');
+    .card:nth-child(5)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      padding-top: 60%;
+      background-image: url('foto8.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     /* Card Content Container */
@@ -580,17 +639,6 @@
               <p>
                 Individuelle Metallarbeiten nach Maß – passgenau für Ihr Gebäude
                 und Ihre Anforderungen.
-              </p>
-            </div>
-          </article>
-
-          <article class="card" onclick="openMail('beratung')">
-            <div class="card-content">
-              <div class="card-icon">✓</div>
-              <h3>Beratung & Planung</h3>
-              <p>
-                Von der ersten Idee bis zur fertigen Ausführung begleiten wir Ihr
-                Projekt persönlich und zuverlässig.
               </p>
             </div>
           </article>
