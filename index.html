@@ -279,6 +279,27 @@
 
     .card:nth-child(1)::before {
       background-image: url('foto2.jpg');
+      width: 50%;
+      padding-top: 60%;
+      border-right: 2px solid white;
+      float: left;
+    }
+
+    .card:nth-child(1)::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      padding-top: 60%;
+      background-image: url('foto3.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card:nth-child(1) {
+      position: relative;
     }
 
     /* Dach- & Kaminverblechungen - 2 Bilder Split */
