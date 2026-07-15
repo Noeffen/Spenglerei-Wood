@@ -466,38 +466,40 @@
         return;
       }
 
-      // Formulardaten zusammenstellen
+      // Formulardaten für Formspree vorbereiten
       const formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
       formData.append('phone', phone);
       formData.append('subject', subject);
       formData.append('message', message);
+      formData.append('_replyto', email);
 
-      // Senden (mit Email-Service wie Formspree, Web3Forms, etc.)
-      // Für jetzt zeigen wir eine Erfolgsmeldung:
-      
-      // Beispiel mit Formspree (kostenlos):
-      // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   body: formData,
-      //   headers: {
-      //     'Accept': 'application/json'
-      //   }
-      // }).then(response => {
-      //   if (response.ok) {
-      //     formMessage.textContent = 'Vielen Dank! Ihre Anfrage wurde versendet. Wir melden uns bald bei Ihnen.';
-      //     formMessage.classList.add('success');
-      //     formMessage.classList.remove('error');
-      //     document.getElementById('contactForm').reset();
-      //   }
-      // });
-
-      // DEMO: Lokale Erfolgsmeldung
-      formMessage.textContent = 'Vielen Dank! Ihre Anfrage wurde versendet. Wir melden uns bald bei Ihnen.';
-      formMessage.classList.add('success');
-      formMessage.classList.remove('error');
-      document.getElementById('contactForm').reset();
+      // An Formspree senden
+      fetch('https://formspree.io/f/mqerezaj', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          formMessage.textContent = 'Vielen Dank! Ihre Anfrage wurde versendet. Wir melden uns bald bei Ihnen.';
+          formMessage.classList.add('success');
+          formMessage.classList.remove('error');
+          document.getElementById('contactForm').reset();
+        } else {
+          formMessage.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+          formMessage.classList.add('error');
+          formMessage.classList.remove('success');
+        }
+      })
+      .catch(error => {
+        formMessage.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+        formMessage.classList.add('error');
+        formMessage.classList.remove('success');
+      });
     });
   </script>
 </body>
