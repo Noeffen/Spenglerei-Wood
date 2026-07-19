@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /impressum.html
 Sitemap: https://spenglerei-wood.de/sitemap.xml
