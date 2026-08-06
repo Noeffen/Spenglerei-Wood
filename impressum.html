@@ -39,9 +39,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(30, 64, 175, 0.06), transparent 40%),
-        linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #f3f4f6 100%);
+      background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
       line-height: 1.6;
     }
 
@@ -186,9 +184,22 @@
         gap: 1rem;
       }
     }
-  </style>
+  
+    /* Hintergrund-Orbs */
+    .bg-scene { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .orb { position: absolute; border-radius: 50%; will-change: transform; }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle at center, rgba(30,64,175,0.10) 0%, transparent 70%); top: -150px; left: -150px; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle at center, rgba(30,64,175,0.07) 0%, transparent 70%); top: 35%; right: -150px; }
+    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle at center, rgba(30,64,175,0.06) 0%, transparent 70%); bottom: 10%; left: 10%; }
+    body > *:not(.bg-scene) { position: relative; z-index: 1; }
+    </style>
 </head>
 <body>
+<div class="bg-scene" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
   <header class="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="logo">Spenglerei <span>Wood</span></a>
@@ -305,5 +316,27 @@
   </footer>
   <script src="/cookie-banner.js"></script>
 
+
+  <script>
+  (function() {
+    var o1 = document.querySelector('.orb-1');
+    var o2 = document.querySelector('.orb-2');
+    var o3 = document.querySelector('.orb-3');
+    if (!o1) return;
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var y = window.scrollY;
+          o1.style.transform = 'translateY(' + (y * 0.10) + 'px)';
+          o2.style.transform = 'translateY(' + (y * -0.08) + 'px)';
+          o3.style.transform = 'translateY(' + (y * 0.06) + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }());
+  </script>
 </body>
 </html>
