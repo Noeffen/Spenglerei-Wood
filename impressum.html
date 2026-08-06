@@ -92,10 +92,28 @@
       color: var(--muted);
       font-weight: 600;
       transition: 0.2s ease;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+      border-radius: 2px;
     }
 
     .nav-links a:hover {
       color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     /* CONTENT */
