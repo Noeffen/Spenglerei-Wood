@@ -383,11 +383,13 @@
     }
   </script>
 
+  <script>
   // Parallax Orbs
   (function() {
     var o1 = document.querySelector('.orb-1');
     var o2 = document.querySelector('.orb-2');
     var o3 = document.querySelector('.orb-3');
+    if (!o1) return;
     var ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
@@ -402,6 +404,7 @@
       }
     }, { passive: true });
   }());
+  </script>
 
 </body>
 </html>
