@@ -217,9 +217,68 @@
     .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle at center, rgba(30,64,175,0.07) 0%, transparent 70%); top: 35%; right: -150px; }
     .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle at center, rgba(30,64,175,0.06) 0%, transparent 70%); bottom: 10%; left: 10%; }
     body > *:not(.bg-scene) { position: relative; z-index: 1; }
-    </style>
+    
+  /* Cookie Banner */
+  .cookie-banner {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+    background: white; border-top: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.08); padding: 20px 24px;
+    transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .cookie-banner.visible { transform: translateY(0); }
+  .cookie-banner-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .cookie-text { flex: 1; min-width: 240px; font-size: 13px; line-height: 1.6; color: #525252; }
+  .cookie-text a { color: #1e40af; font-weight: 600; text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btn {
+    padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700;
+    cursor: pointer; border: none; font-family: inherit; transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .cookie-btn-decline { background: white; color: #525252; border: 1px solid rgba(0,0,0,0.15); }
+  .cookie-btn-decline:hover { border-color: #737373; color: #111; }
+  .cookie-btn-accept { background: #1e40af; color: white; }
+  .cookie-btn-accept:hover { background: #1d3a8a; transform: translateY(-1px); }
+  @media (max-width: 600px) {
+    .cookie-banner-inner { flex-direction: column; align-items: stretch; }
+    .cookie-actions { justify-content: stretch; }
+    .cookie-btn { flex: 1; }
+  }
+  </style>
+
+  <!-- Google Analytics mit Consent Mode v2 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW83VSP9KW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('config', 'G-VW83VSP9KW');
+  </script>
 </head>
 <body>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-banner-inner">
+    <p class="cookie-text">
+      Diese Website verwendet Google Analytics zur Analyse der Nutzung.
+      Mehr dazu in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Ablehnen</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Akzeptieren</button>
+    </div>
+  </div>
+</div>
 <div class="bg-scene" aria-hidden="true">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
@@ -303,30 +362,42 @@
           Telefon: <a href="tel:01712894827">0171 2894827</a>
         </p>
 
-        <h3>8. Cookies und Google Analytics</h3>
-        <p>
-          Diese Website verwendet Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, 
-          Barrow Street, Dublin 4, Irland ("Google"). Google Analytics verwendet Cookies, die eine Analyse der 
-          Benutzung der Website durch Sie ermöglichen.
-        </p>
-        <p>
-          Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an 
-          einen Server von Google übertragen und dort gespeichert. Die Nutzung erfolgt ausschließlich mit Ihrer 
-          vorherigen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie über unseren Cookie-Banner erteilen 
-          oder ablehnen können.
-        </p>
-        <p>
-          Sie können Ihre einmal erteilte Einwilligung jederzeit widerrufen, indem Sie die in Ihrem Browser 
-          gespeicherten Cookies für diese Website löschen und die Seite neu laden – der Cookie-Banner erscheint 
-          dann erneut.
-        </p>
-        <p>
-          Weitere Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der 
-          Datenschutzerklärung von Google: 
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
-        </p>
+        <h3>8. Google Analytics</h3>
+          <p>
+            Diese Website nutzt Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street,
+            Dublin 4, Irland). Google Analytics wird erst aktiv, nachdem Sie im Cookie-Banner
+            ausdrücklich zugestimmt haben. Ohne Einwilligung werden keine Cookies gesetzt und
+            keine Daten an Google übertragen (Consent Mode v2).
+          </p>
+          <p>
+            <strong>Verarbeitete Daten:</strong> Pseudonymisierte IP-Adresse, aufgerufene Seiten,
+            Verweildauer, Geräte- und Browserinformationen, ungefährer Standort.<br>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).<br>
+            <strong>Widerruf:</strong> Einwilligung jederzeit widerrufbar durch Löschen der
+            Website-Daten im Browser oder erneutes Ablehnen im Cookie-Banner.<br>
+            <strong>Weitere Infos:</strong>
+            <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+          </p>
 
-        <h3>9. Beschwerderecht</h3>
+          <h3>9. Kontaktformular (Formspree)</h3>
+          <p>
+            Das Kontaktformular auf unserer Website wird über den Dienst <strong>Formspree</strong>
+            (Formspree Inc., USA) verarbeitet. Bei Nutzung des Formulars werden Name, E-Mail-Adresse
+            und Ihre Nachricht an Formspree übermittelt und von dort per E-Mail an uns weitergeleitet.
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen).
+            Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage genutzt.
+            Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy" target="_blank">formspree.io/legal/privacy-policy</a>
+          </p>
+
+          <h3>9. Hosting (GitHub Pages)</h3>
+          <p>
+            Diese Website wird über <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St,
+            San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden technische Daten
+            wie IP-Adresse, Browsertyp und aufgerufene Seiten automatisch in Server-Logfiles gespeichert.
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen:
+            <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages" target="_blank">GitHub Pages Datenschutz</a>
+          </p>
+          <h3>9. Beschwerderecht</h3>
         <p>
           Sie haben das Recht, sich bei einer Datenschutzbehörde zu beschweren, wenn Sie der Meinung sind, dass die 
           Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt.
@@ -354,7 +425,7 @@
       </p>
     </div>
   </footer>
-    <script src="/cookie-banner.js"></script>
+    
 
 
   <script>
@@ -376,6 +447,42 @@
         ticking = true;
       }
     }, { passive: true });
+  }());
+  </script>
+
+  <script>
+  (function() {
+    var KEY = 'cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    var acceptBtn = document.getElementById('cookieAccept');
+    var declineBtn = document.getElementById('cookieDecline');
+
+    function updateConsent(granted) {
+      if (typeof gtag !== 'function') return;
+      gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied',
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied'
+      });
+    }
+
+    var stored = localStorage.getItem(KEY);
+    if (stored === 'granted') { updateConsent(true); }
+    else if (stored !== 'denied') {
+      setTimeout(function() { banner.classList.add('visible'); }, 400);
+    }
+
+    acceptBtn.addEventListener('click', function() {
+      localStorage.setItem(KEY, 'granted');
+      updateConsent(true);
+      banner.classList.remove('visible');
+    });
+    declineBtn.addEventListener('click', function() {
+      localStorage.setItem(KEY, 'denied');
+      updateConsent(false);
+      banner.classList.remove('visible');
+    });
   }());
   </script>
 </body>
