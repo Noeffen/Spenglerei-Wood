@@ -300,7 +300,7 @@
       if (!emailRegex.test(email)) { formMessage.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'; formMessage.className = 'form-message error'; return; }
       const formData = new FormData();
       formData.append('name', name); formData.append('email', email); formData.append('phone', phone); formData.append('subject', subject); formData.append('message', message); formData.append('_replyto', email);
-      fetch('https://formspree.io/f/mqerezaj', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+      fetch('https://formspree.io/f/meajknro', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
       .then(response => {
         if (response.ok) { formMessage.textContent = 'Vielen Dank! Ihre Anfrage wurde versendet. Wir melden uns bald bei Ihnen.'; formMessage.className = 'form-message success'; document.getElementById('contactForm').reset(); }
         else { formMessage.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'; formMessage.className = 'form-message error'; }
