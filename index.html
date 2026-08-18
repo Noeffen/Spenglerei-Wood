@@ -213,14 +213,18 @@
     .card p { margin: 0; color: var(--muted); }
     .about-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 2rem; align-items: center; }
     .about-image { min-height: 420px; border-radius: var(--radius); background: url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80") center/cover; border: 1px solid var(--line); box-shadow: var(--shadow); }
-    .about-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+    .about-box { padding: 1rem 0 1rem 1rem; }
     .check-list { list-style: none; padding: 0; margin: 1.2rem 0 0; }
-    .check-list li { margin-bottom: 0.8rem; color: var(--muted); }
+    .check-list li { margin-bottom: 1rem; color: var(--muted); font-size: 1rem; line-height: 1.6; }
     .check-list li::before { content: "✓"; color: var(--accent); font-weight: 800; margin-right: 0.7rem; }
-    .cta { padding-bottom: 5rem; }
-    .cta-box { background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(255, 255, 255, 0.6)); border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 28px; padding: 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; box-shadow: var(--shadow); }
-    .cta-box h2 { margin: 0 0 0.6rem; font-size: clamp(1.6rem, 3vw, 2.5rem); }
-    .cta-box p { margin: 0; color: var(--muted); max-width: 650px; }
+    .cta { padding-bottom: 5rem; border-top: 1px solid var(--line); }
+    .cta-contact { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; margin-top: 0; }
+    .cta-contact a { font-weight: 600; color: var(--accent); text-decoration: none; font-size: 1rem; }
+    .cta-contact a:hover { text-decoration: underline; }
+    .cta-divider { color: var(--line); }
+    .cta-box { padding: 0; }
+    .cta-box h2 { margin: 0 0 0.8rem; font-size: clamp(1.8rem, 3.5vw, 3rem); letter-spacing: -0.03em; font-weight: 800; }
+    .cta-box p { margin: 0 0 2rem; color: var(--muted); max-width: 560px; font-size: 1.05rem; line-height: 1.7; }
     footer { border-top: 1px solid rgba(100, 116, 139, 0.12); padding: 2rem 0; color: var(--muted); background: rgba(255, 255, 255, 0.6); }
     .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     @media (max-width: 980px) { .hero-grid, .about-grid, .grid-3, .cta-box { grid-template-columns: 1fr; } .cta-box { display: block; } .hero { padding-top: 4rem; } .hero-image { min-height: 340px; } }
@@ -336,7 +340,7 @@
 
     <section id="leistungen">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal"
           <h2>Unsere Leistungen im Raum Aschaffenburg</h2>
           <p>Wir übernehmen klassische Spenglerarbeiten für Privatkunden, Gewerbe und Sanierungsprojekte im Landkreis Aschaffenburg und Spessart.</p>
         </div>
@@ -384,7 +388,7 @@
       <div class="container about-grid">
         <div class="about-image"></div>
         <div class="about-box">
-          <div class="section-head">
+          <div class="section-head reveal"
             <h2>Über Spenglerei Wood</h2>
             <p>Wir verbinden traditionelles Handwerk mit moderner Ausführung. Mit Sitz in Johannesberg bedienen wir Kunden im gesamten Landkreis Aschaffenburg und Spessart.</p>
           </div>
@@ -400,12 +404,14 @@
     <section class="cta" id="kontakt">
       <div class="container">
         <div class="cta-box">
-          <div>
-            <h2>Sie planen ein Projekt?</h2>
-            <p>Ob neue Dachrinne, Verblechung oder Fassadenlösung – wir beraten Sie gerne und erstellen ein passendes Angebot.</p>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="kontakt.html">Zur Kontaktseite</a>
+          <h2>Projekt geplant?<br>Wir melden uns.</h2>
+          <p>Rufen Sie uns an oder schreiben Sie eine E-Mail — wir sind persönlich erreichbar und antworten innerhalb von 24 Stunden.</p>
+          <div class="cta-contact">
+            <a href="tel:01712894827">📞 0171 2894827</a>
+            <span class="cta-divider">·</span>
+            <a href="mailto:info@spenglerei-wood.de">✉ info@spenglerei-wood.de</a>
+            <span class="cta-divider">·</span>
+            <a href="kontakt.html">Kontaktformular →</a>
           </div>
         </div>
       </div>
