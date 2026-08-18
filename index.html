@@ -227,18 +227,18 @@
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
     .card { background: transparent; border: 1px solid transparent; border-radius: var(--radius); box-shadow: none; transition: background 0.35s cubic-bezier(.16,1,.3,1), border-color 0.35s, box-shadow 0.35s, transform 0.35s cubic-bezier(.16,1,.3,1); cursor: pointer; overflow: hidden; display: flex; flex-direction: column; }
     .card::before { content: ''; display: block; width: 100%; padding-top: 60%; background-size: cover; background-position: center; }
-    .card:nth-child(1)::before { background-image: url('foto2.jpg'); width: 50%; padding-top: 60%; border-right: 2px solid white; float: left; }
+    .card:nth-child(1)::before { background-image: url('foto2.jpg'); width: 50%; padding-top: 60%; border-right: 1px solid rgba(255,255,255,0.25); float: left; }
     .card:nth-child(1)::after { content: ''; display: block; position: absolute; top: 0; right: 0; width: 50%; padding-top: 60%; background-image: url('foto3.jpg'); background-size: cover; background-position: center; }
     .card:nth-child(1) { position: relative; }
     .card:nth-child(2) { position: relative; }
-    .card:nth-child(2)::before { background-image: url('foto4.jpg'); width: 50%; padding-top: 60%; border-right: 2px solid white; float: left; }
+    .card:nth-child(2)::before { background-image: url('foto4.jpg'); width: 50%; padding-top: 60%; border-right: 1px solid rgba(255,255,255,0.25); float: left; }
     .card:nth-child(2)::after { content: ''; display: block; position: absolute; top: 0; right: 0; width: 50%; padding-top: 60%; background-image: url('foto5.jpg'); background-size: cover; background-position: center; }
     .card:nth-child(3) { position: relative; }
-    .card:nth-child(3)::before { background-image: url('foto6.jpg'); width: 50%; padding-top: 60%; border-right: 2px solid white; float: left; }
+    .card:nth-child(3)::before { background-image: url('foto6.jpg'); width: 50%; padding-top: 60%; border-right: 1px solid rgba(255,255,255,0.25); float: left; }
     .card:nth-child(3)::after { content: ''; display: block; position: absolute; top: 0; right: 0; width: 50%; padding-top: 60%; background-image: url('foto7.jpg'); background-size: cover; background-position: center; }
     .card:nth-child(4)::before { background-image: url('foto8.jpg'); }
     .card:nth-child(5) { position: relative; }
-    .card:nth-child(5)::before { background-image: url('foto9.jpg'); width: 50%; padding-top: 60%; border-right: 2px solid white; float: left; }
+    .card:nth-child(5)::before { background-image: url('foto9.jpg'); width: 50%; padding-top: 60%; border-right: 1px solid rgba(255,255,255,0.25); float: left; }
     .card:nth-child(5)::after { content: ''; display: block; position: absolute; top: 0; right: 0; width: 50%; padding-top: 60%; background-image: url('foto10.jpg'); background-size: cover; background-position: center; }
     .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
     .card:hover { transform: translateY(-4px); border-color: rgba(30, 64, 175, 0.35); box-shadow: 0 24px 48px rgba(30, 64, 175, 0.10); }
