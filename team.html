@@ -163,18 +163,37 @@
     }
 
     /* TEAM IMAGE */
-    .team-image-container {
+    .team-image-section {
       width: 100%;
-      min-height: 520px;
-      border-radius: 20px;
-      background: url("team.jpg") center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 3.5rem;
+      min-height: 480px;
+      background: url("team.jpg") center/cover no-repeat;
       position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
     }
+    .team-image-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,20,0.65) 0%, rgba(10,10,20,0.1) 60%, transparent 100%);
+    }
+    .team-image-section .team-label {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem 2.5rem;
+      width: 100%;
+    }
+    .team-label p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0;
+    }
+    .team-image-container { display: none; }
 
     .team-image-placeholder {
       text-align: center;
@@ -396,16 +415,11 @@
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="team-image-container">
-          <div class="team-image-placeholder">
-            <h3>Teamfoto</h3>
-            <p>Hier kommt später ein Teamfoto rein</p>
-          </div>
-        </div>
+    <div class="team-image-section">
+      <div class="team-label">
+        <p>Johannesberg · Aschaffenburg · Spessart</p>
       </div>
-    </section>
+    </div>
 
     <section>
       <div class="about-content">
