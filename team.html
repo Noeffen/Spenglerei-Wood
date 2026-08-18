@@ -165,16 +165,15 @@
     /* TEAM IMAGE */
     .team-image-container {
       width: 100%;
-      min-height: 500px;
-      border-radius: var(--radius);
+      min-height: 520px;
+      border-radius: 20px;
       background: url("team.jpg") center/cover;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
       position: relative;
+      overflow: hidden;
     }
 
     .team-image-placeholder {
@@ -190,25 +189,21 @@
 
     /* ABOUT SECTION */
     .about-content {
-      max-width: 900px;
+      max-width: 860px;
       margin: 0 auto;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
+      padding: 0;
     }
 
     .about-content h3 {
-      font-size: 1.4rem;
-      margin-top: 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 2.5rem;
       margin-bottom: 0.75rem;
-      color: var(--text);
     }
-
-    .about-content h3:first-child {
-      margin-top: 0;
-    }
+    .about-content h3:first-child { margin-top: 0; }
 
     .about-content p {
       color: var(--muted);
@@ -233,25 +228,13 @@
       padding: 3rem 0;
     }
 
-    .cta-box {
-      background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(255, 255, 255, 0.6));
-      border: 1px solid rgba(30, 64, 175, 0.2);
-      border-radius: 28px;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .cta-box h2 {
-      margin: 0 0 0.6rem;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-    }
-
-    .cta-box p {
-      margin: 0 0 1.5rem;
-      color: var(--muted);
-      max-width: 650px;
-      display: inline-block;
-    }
+    .cta { border-top: 1px solid var(--line); }
+    .cta-box { padding: 0; }
+    .cta-box h2 { margin: 0 0 0.8rem; font-size: clamp(1.8rem, 3.5vw, 3rem); letter-spacing: -0.03em; font-weight: 800; }
+    .cta-box p { margin: 0 0 2rem; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+    .cta-contact { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .cta-contact a { font-weight: 600; color: var(--accent); text-decoration: none; font-size: 1rem; }
+    .cta-contact a:hover { text-decoration: underline; }
 
     .btn {
       display: inline-block;
@@ -407,8 +390,9 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Unser Team</h1>
-        <p>Lernen Sie die erfahrenen Handwerker kennen, die hinter Spenglerei Wood stehen.</p>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Spenglerei Wood</div>
+        <h1 style="letter-spacing:-0.03em;font-weight:800;">Menschen hinter<br>dem Handwerk.</h1>
+        <p style="max-width:520px;">Erfahrene Handwerker mit Leidenschaft für Präzision — im Raum Aschaffenburg und Spessart.</p>
       </div>
     </section>
 
@@ -454,9 +438,13 @@
     <section class="cta">
       <div class="container">
         <div class="cta-box">
-          <h2>Möchten Sie uns kennenlernen?</h2>
-          <p>Kontaktieren Sie uns gerne für ein persönliches Gespräch und ein unverbindliches Angebot.</p>
-          <a href="kontakt.html" class="btn btn-primary">Zur Kontaktseite</a>
+          <h2>Persönlich.<br>Zuverlässig. Vor Ort.</h2>
+          <p>Rufen Sie an oder schreiben Sie uns — wir antworten innerhalb von 24 Stunden.</p>
+          <div class="cta-contact">
+            <a href="tel:01712894827">📞 0171 2894827</a>
+            <span style="color:var(--line)">·</span>
+            <a href="mailto:info@spenglerei-wood.de">✉ info@spenglerei-wood.de</a>
+          </div>
         </div>
       </div>
     </section>
