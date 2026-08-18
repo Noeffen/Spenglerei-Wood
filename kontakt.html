@@ -99,18 +99,18 @@
     .hero p { font-size: 1.1rem; color: var(--muted); max-width: 700px; margin: 0 auto 2rem; }
     section { padding: 3rem 0; }
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 1000px; margin: 0 auto; }
-    .contact-info { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; padding: 0; }
     .info-block { padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
     .info-block:last-child { border-bottom: none; padding-bottom: 0; }
     .info-block h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin: 0 0 0.5rem; font-weight: 700; }
     .info-block p { margin: 0; color: var(--muted); line-height: 1.8; }
     .info-block a { color: var(--accent); font-weight: 600; transition: 0.2s ease; }
     .info-block a:hover { color: var(--accent-dark); }
-    .contact-form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+    .contact-form { padding: 0; }
     .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); font-size: 0.95rem; }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 12px; font-family: Arial, sans-serif; font-size: 1rem; color: var(--text); background: rgba(255, 255, 255, 0.5); transition: 0.2s ease; }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); background: rgba(255, 255, 255, 0.8); box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.08); }
+    .form-group label { display: block; font-weight: 700; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; color: var(--accent); }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem 0; border: none; border-bottom: 1.5px solid var(--line); border-radius: 0; font-family: inherit; font-size: 1rem; color: var(--text); background: transparent; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-bottom-color: var(--accent); }
     .form-group textarea { resize: vertical; min-height: 120px; }
     .btn { display: inline-block; padding: 0.95rem 1.8rem; border-radius: 999px; font-weight: bold; transition: 0.25s ease; border: 1px solid transparent; cursor: pointer; width: 100%; text-align: center; font-size: 1rem; }
     .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 12px 24px rgba(30, 64, 175, 0.25); }
@@ -205,8 +205,9 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Kontakt</h1>
-        <p>Spenglerei Wood in Johannesberg bei Aschaffenburg – wir freuen uns auf Ihre Anfrage für Dachrinnen, Verblechungen oder Metallfassaden im Raum Spessart.</p>
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;">Spenglerei Wood</div>
+        <h1 style="letter-spacing:-0.03em;font-weight:800;">Schreiben Sie uns.</h1>
+        <p style="max-width:480px;margin:0.8rem 0 0;">Wir melden uns persönlich — meist noch am selben Tag.</p>
       </div>
     </section>
 
