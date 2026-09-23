@@ -40,7 +40,16 @@
   "isPartOf": {
     "@type": "LocalBusiness",
     "@id": "https://spenglerei-wood.de/#business",
-    "name": "Spenglerei Wood"
+    "name": "Spenglerei Wood",
+    "telephone": "+491712894827",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nebenstr. 4a",
+      "addressLocality": "Johannesberg",
+      "postalCode": "63867",
+      "addressRegion": "Bayern",
+      "addressCountry": "DE"
+    }
   }
 }
   </script>
@@ -198,15 +207,20 @@
     .team-image-section {
       width: 100%;
       min-height: 480px;
-      background: url("team.jpg") center/cover no-repeat;
       position: relative;
       display: flex;
       align-items: flex-end;
+      overflow: hidden;
+    }
+    .team-image-bg {
+      position: absolute; inset: 0; z-index: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .team-image-section::after {
       content: "";
       position: absolute;
       inset: 0;
+      z-index: 1;
       background: linear-gradient(to top, rgba(10,10,20,0.65) 0%, rgba(10,10,20,0.1) 60%, transparent 100%);
     }
     .team-image-section .team-label {
@@ -448,6 +462,7 @@
     </section>
 
     <div class="team-image-section">
+      <img class="team-image-bg" src="team.jpg" alt="Team der Spenglerei Wood vor dem Firmenfahrzeug in Johannesberg bei Aschaffenburg">
       <div class="team-label">
         <p>Johannesberg · Aschaffenburg · Spessart</p>
       </div>
